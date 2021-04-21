@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/drawingView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/colorGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/drawingView">
+
+            <View
+                android:id="@+id/rbRed"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <View
+                android:id="@+id/rbGreen"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <View
+                android:id="@+id/rbBlue"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <View
+                android:id="@+id/rbOrange"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <View
+                android:id="@+id/rbYellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <View
+                android:id="@+id/rbBlack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:checked="true" />
+
+            <View
+                android:id="@+id/rbEraser"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                />
+
+        </RadioGroup>
+
+        <ImageButton
+            android:id="@+id/ibUndo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@id/colorGroup"
+            app:layout_constraintStart_toEndOf="@+id/colorGroup"
+            app:layout_constraintTop_toTopOf="@+id/colorGroup"
+            app:srcCompat="@drawable/ic_baseline_undo_24" />
+
+        <ProgressBar
+            android:id="@+id/roundTimerProgressBar"
+            style="@style/HorizontalProgressBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="10dp"
+            android:progress="100"
+            app:layout_constraintEnd_toEndOf="@id/tvCurWord"
+            app:layout_constraintStart_toStartOf="@id/tvCurWord"
+            app:layout_constraintTop_toBottomOf="@id/drawingView" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCurWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/roundTimerProgressBar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:listitem="@layout/item_announcement"
+            app:layout_constraintBottom_toTopOf="@+id/tilMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/llActions"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurWord"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/connectionProgressBar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/rvChat"
+            app:layout_constraintEnd_toEndOf="@+id/rvChat"
+            app:layout_constraintStart_toStartOf="@+id/rvChat"
+            app:layout_constraintTop_toTopOf="@+id/rvChat" />
+
+        <LinearLayout
+            android:id="@+id/llActions"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/tilMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCurWord">
+
+            <ImageButton
+                android:id="@+id/ibPlayers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_person"
+                android:background="@android:color/transparent"/>
+
+            <ImageButton
+                android:id="@+id/ibMic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_mic_off"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMessage"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ibClearText"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="150" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/ibClearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_round_clear_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ibSend"
+            app:layout_constraintTop_toTopOf="@+id/tilMessage" />
+
+        <ImageButton
+            android:id="@+id/ibSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_send_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvChat" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chooseWordOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/overlay_color"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivHappyMonkey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_happy_monkey" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvChooseWord"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/choose_your_word"
+                android:textSize="35sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivHappyMonkey" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFirstWord"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="First Word"
+                app:layout_constraintBottom_toTopOf="@+id/btnSecondWord"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSecondWord"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="Second Word"
+                app:layout_constraintBottom_toTopOf="@+id/btnThirdWord"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnFirstWord"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnThirdWord"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="Third Word"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSecondWord"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvRemainingTimeChooseWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textSize="50sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnThirdWord" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:insetForeground="@android:color/transparent"
+        android:fitsSystemWindows="false" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

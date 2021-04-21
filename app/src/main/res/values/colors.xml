@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_orange">#FFCC80</color>
+    <color name="red">#E53935</color>
+    <color name="orange">#FFA726</color>
+    <color name="bright_orange">#FFB300</color>
+    <color name="green">#83FF00</color>
+    <color name="light_green">#C5E1A5</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lightgrey">#DDDDDD</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="overlay_color">#FFFFFF</color>
+</resources>

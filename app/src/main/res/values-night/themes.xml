@@ -1,0 +1,70 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Doodlekong" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/bright_orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/green</item>
+        <item name="colorSecondaryVariant">@color/light_green</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:textViewStyle">@style/TextViewStyle</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="textInputStyle">@style/TextInputStyle</item>
+        <item name="android:progressBarStyleHorizontal">@style/HorizontalProgressBarStyle</item>
+        <item name="materialButtonStyle">@style/ButtonStyle</item>
+        <item name="snackbarStyle">@style/SnackbarStyle</item>
+        <item name="snackbarTextViewStyle">@style/SnackbarTextStyle</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="fontFamily">@font/handwriting</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SnackbarTextStyle" parent="Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SnackbarStyle" parent="Widget.MaterialComponents.Snackbar">
+        <item name="backgroundTint">@color/black</item>
+        <item name="android:drawable">@drawable/doodle_shape_background</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@drawable/text_input_box_selector</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+    <style name="DropDownStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@drawable/text_input_box_selector</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="hintTextColor">@color/lightgrey</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">28sp</item>
+        <item name="fontFamily">@font/handwriting</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/handwriting</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/black</item>
+    </style>
+
+    <style name="TextViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="fontFamily">@font/handwriting</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="HorizontalProgressBarStyle" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressTint">@color/black</item>
+    </style>
+
+</resources>

@@ -1,0 +1,52 @@
+<resources>
+    <string-array name="room_size_array">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string name="app_name">Doodlekong</string>
+    <string name="apiBaseUrl">10.0.2.2:8001/ws/</string>
+    <string name="choose_a_username">Choose a username</string>
+    <string name="next">Next</string>
+    <string name="username">Username</string>
+    <string name="join_room">Join Room</string>
+    <string name="or">or</string>
+    <string name="room_name">Room name</string>
+    <string name="join">Join</string>
+    <string name="error_field_empty">The fields may not be empty</string>
+    <string name="error_username_too_short">The minimum username length is %d characters.</string>
+    <string name="error_username_too_long">The maximum username length is %d.</string>
+    <string name="create_room">Create Room</string>
+    <string name="error_room_name_too_long">The room name must not exceed %d characters.</string>
+    <string name="error_room_name_too_short">The room name must be at least %d characters long.</string>
+    <string name="you">You</string>
+    <string name="error_room_too_large">The maximum room size is %d.</string>
+    <string name="player_is_drawing">%s is choosing a word...</string>
+    <string name="waiting_for_players">Waiting for players...</string>
+    <string name="waiting_for_start">Waiting for start...</string>
+    <string name="check_internet_connection">Couldn\'t reach server. Check your internet connection.</string>
+    <string name="error_http">Something went wrong. Please try again later.</string>
+    <string name="error_internet_turned_off">This app requires an active internet connection to be used.</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+    <string name="dialog_leave_title">Do you really want to close the app?</string>
+    <string name="dialog_leave_message">This will disconnect you from the game.</string>
+    <string name="dialog_yes">yes</string>
+    <string name="dialog_leave_no">no</string>
+    <string name="room_size">Room Size</string>
+    <string name="rationale_record_audio">To enable speech to text, you need to permit recording audio.</string>
+    <string name="speech_to_text_info">Simply speak into your microphone to quickly guess words. To disable this function, press on the microphone icon again.</string>
+    <string name="speech_not_available">Speech recognition is not available for your device.</string>
+    <string name="doodlekong">Doodlekong</string>
+    <string name="choose_your_word">You are next, choose your word!</string>
+    <string name="create_a_new_room">Create a New Room</string>
+    <string name="search_for_rooms">Search for rooms...</string>
+    <string name="no_rooms_found">No Rooms Found :(</string>
+    <string name="listening">Listening...</string>
+    <string name="error_unknown">Unknown Error</string>
+    <string name="create">Create</string>
+</resources>
