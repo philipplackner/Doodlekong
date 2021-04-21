@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/setup_nav_graph"
+    app:startDestination="@id/usernameFragment">
+
+    <fragment
+        android:id="@+id/usernameFragment"
+        android:name="com.plcoding.doodlekong.ui.setup.fragments.UsernameFragment"
+        android:label="UsernameFragment" >
+        <action
+            android:id="@+id/action_usernameFragment_to_selectRoomFragment"
+            app:destination="@id/selectRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectRoomFragment"
+        android:name="com.plcoding.doodlekong.ui.setup.fragments.SelectRoomFragment"
+        android:label="SelectRoomFragment" >
+        <action
+            android:id="@+id/action_selectRoomFragment_to_createRoomFragment"
+            app:destination="@id/createRoomFragment" />
+        <action
+            android:id="@+id/action_selectRoomFragment_to_drawingActivity"
+            app:destination="@id/drawingActivity" />
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createRoomFragment"
+        android:name="com.plcoding.doodlekong.ui.setup.fragments.CreateRoomFragment"
+        android:label="CreateRoomFragment" >
+        <action
+            android:id="@+id/action_createRoomFragment_to_drawingActivity"
+            app:destination="@id/drawingActivity" />
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/drawingActivity"
+        android:name="com.plcoding.doodlekong.ui.drawing.DrawingActivity"
+        android:label="DrawingActivity" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="roomName"
+            app:argType="string" />
+    </activity>
+</navigation>
