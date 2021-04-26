@@ -3,6 +3,8 @@ package com.plcoding.doodlekong.di
 import android.content.Context
 import com.google.gson.Gson
 import com.plcoding.doodlekong.data.remote.api.SetupApi
+import com.plcoding.doodlekong.repository.DefaultSetupRepository
+import com.plcoding.doodlekong.repository.SetupRepository
 import com.plcoding.doodlekong.util.Constants.HTTP_BASE_URL
 import com.plcoding.doodlekong.util.Constants.HTTP_BASE_URL_LOCALHOST
 import com.plcoding.doodlekong.util.Constants.USE_LOCALHOST
@@ -23,6 +25,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun provideSetupRepository(
+        setupApi: SetupApi,
+        @ApplicationContext context: Context
+    ): SetupRepository = DefaultSetupRepository(setupApi, context)
 
     @Singleton
     @Provides
