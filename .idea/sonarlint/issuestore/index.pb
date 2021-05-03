@@ -39,11 +39,15 @@ w
 Gapp/src/main/java/com/plcoding/doodlekong/repository/SetupRepository.kt,7\7\779dd9692c869f3a7a86bf7dd216323309d4272b
 ~
 Napp/src/main/java/com/plcoding/doodlekong/repository/DefaultSetupRepository.kt,a\6\a6d03c05771f48d5f904c35c952f729f99d025f8
-t
-Dapp/src/main/java/com/plcoding/doodlekong/ui/setup/SetupViewModel.kt,9\6\96b9eec425adaebbc0576077cbd0d1940f271075
 m
 =app/src/main/java/com/plcoding/doodlekong/util/FragmentExt.kt,9\2\925334ab7b52abd33108350e5bc3dd4bbbde3ed9
 r
 Bapp/src/main/java/com/plcoding/doodlekong/util/NavControllerExt.kt,3\d\3dab2929e344b6c807e7fbe1447575737a977523
 q
 Aapp/src/main/java/com/plcoding/doodlekong/adapters/RoomAdapter.kt,3\b\3b943a2d548018e8c2ab73056b9eb3ce41ca1c2c
+y
+Iapp/src/main/java/com/plcoding/doodlekong/ui/setup/CreateRoomViewModel.kt,4\d\4db08891cd2a37600f2cc27d81562d9fe771496b
+y
+Iapp/src/main/java/com/plcoding/doodlekong/ui/setup/SelectRoomViewModel.kt,c\b\cbb07717c632a7edf00bc713385227a215743873
+w
+Gapp/src/main/java/com/plcoding/doodlekong/ui/setup/UsernameViewModel.kt,2\9\29f348c557be386f7b5d05a3d59ed0fe26057976
