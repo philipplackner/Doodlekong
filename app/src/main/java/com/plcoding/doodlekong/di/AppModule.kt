@@ -1,16 +1,27 @@
 package com.plcoding.doodlekong.di
 
+import android.app.Application
 import android.content.Context
 import com.google.gson.Gson
 import com.plcoding.doodlekong.data.remote.api.SetupApi
+import com.plcoding.doodlekong.data.remote.ws.CustomGsonMessageAdapter
+import com.plcoding.doodlekong.data.remote.ws.DrawingApi
+import com.plcoding.doodlekong.data.remote.ws.FlowStreamAdapter
 import com.plcoding.doodlekong.repository.DefaultSetupRepository
 import com.plcoding.doodlekong.repository.SetupRepository
 import com.plcoding.doodlekong.util.Constants.HTTP_BASE_URL
 import com.plcoding.doodlekong.util.Constants.HTTP_BASE_URL_LOCALHOST
+import com.plcoding.doodlekong.util.Constants.RECONNECT_INTERVAL
 import com.plcoding.doodlekong.util.Constants.USE_LOCALHOST
+import com.plcoding.doodlekong.util.Constants.WS_BASE_URL
+import com.plcoding.doodlekong.util.Constants.WS_BASE_URL_LOCALHOST
 import com.plcoding.doodlekong.util.DispatcherProvider
 import com.plcoding.doodlekong.util.clientId
 import com.plcoding.doodlekong.util.dataStore
+import com.tinder.scarlet.Scarlet
+import com.tinder.scarlet.lifecycle.android.AndroidLifecycle
+import com.tinder.scarlet.retry.LinearBackoffStrategy
+import com.tinder.scarlet.websocket.okhttp.newWebSocketFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,6 +29,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,6 +37,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+@ExperimentalCoroutinesApi
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
@@ -59,6 +72,27 @@ object AppModule {
     @Provides
     fun provideClientId(@ApplicationContext context: Context): String {
         return runBlocking { context.dataStore.clientId() }
+    }
+
+    @Singleton
+    @Provides
+    fun provideDrawingApi(
+            app: Application,
+            okHttpClient: OkHttpClient,
+            gson: Gson
+    ): DrawingApi {
+        return Scarlet.Builder()
+                .backoffStrategy(LinearBackoffStrategy(RECONNECT_INTERVAL))
+                .lifecycle(AndroidLifecycle.ofApplicationForeground(app))
+                .webSocketFactory(
+                        okHttpClient.newWebSocketFactory(
+                                if(USE_LOCALHOST) WS_BASE_URL_LOCALHOST else WS_BASE_URL
+                        )
+                )
+                .addStreamAdapterFactory(FlowStreamAdapter.Factory)
+                .addMessageAdapterFactory(CustomGsonMessageAdapter.Factory(gson))
+                .build()
+                .create()
     }
 
     @Singleton
