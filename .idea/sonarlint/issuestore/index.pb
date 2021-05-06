@@ -12,11 +12,7 @@ o
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 ‚
-Rapp/src/main/java/com/plcoding/doodlekong/ui/setup/fragments/CreateRoomFragment.kt,7\c\7c0a0ecc327cf10c5e930b5c4187c25bb725f572
-‚
 Rapp/src/main/java/com/plcoding/doodlekong/ui/setup/fragments/SelectRoomFragment.kt,6\3\6337e99110ab79faf110fea6b6cdfd07166f7e33
-€
-Papp/src/main/java/com/plcoding/doodlekong/ui/setup/fragments/UsernameFragment.kt,d\0\d06d05480d3ff7819b7d8dd53683c911d16a5417
 s
 Capp/src/main/java/com/plcoding/doodlekong/ui/setup/SetupActivity.kt,8\5\853971891fae1505a8714f6a393b3e7f3cba1e97
 ƒ
@@ -69,8 +65,6 @@ Lapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/GameError.kt,8
 Lapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/GameState.kt,d\8\d809ff6ca1555ed5a34b8bff10c6e2ba10cf0efe
 „
 Tapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/JoinRoomHandshake.kt,2\1\219a82609056ccc3f159d14703a20107dc4980c8
-{
-Kapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/NewWords.kt,0\0\008c12e6907045f2c4959475ada3afe7d1f652c1
 ~
 Napp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/PhaseChange.kt,2\4\2496defc82e6bf51fcfb96d7412671224c7afa78
 w

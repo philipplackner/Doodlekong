@@ -15,6 +15,7 @@ import com.plcoding.doodlekong.data.remote.ws.Room
 import com.plcoding.doodlekong.databinding.FragmentCreateRoomBinding
 import com.plcoding.doodlekong.ui.setup.CreateRoomViewModel
 import com.plcoding.doodlekong.util.Constants
+import com.plcoding.doodlekong.util.hideKeyboard
 import com.plcoding.doodlekong.util.navigateSafely
 import com.plcoding.doodlekong.util.snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,6 +46,7 @@ class CreateRoomFragment : Fragment(R.layout.fragment_create_room) {
                             binding.tvMaxPersons.text.toString().toInt()
                     )
             )
+            requireActivity().hideKeyboard(binding.root)
         }
     }
 

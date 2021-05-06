@@ -34,6 +34,9 @@ class DrawingViewModel @Inject constructor(
         object UndoEvent : SocketEvent()
     }
 
+    private val _newWords = MutableStateFlow(NewWords(listOf()))
+    val newWords: StateFlow<NewWords> = _newWords
+
     private val _chat = MutableStateFlow<List<BaseModel>>(listOf())
     val chat: StateFlow<List<BaseModel>> = _chat
 
@@ -87,8 +90,15 @@ class DrawingViewModel @Inject constructor(
                     is ChatMessage -> {
                         socketEventChannel.send(SocketEvent.ChatMessageEvent(data))
                     }
+                    is ChosenWord -> {
+                        socketEventChannel.send(SocketEvent.ChosenWordEvent(data))
+                    }
                     is Announcement -> {
                         socketEventChannel.send(SocketEvent.AnnouncementEvent(data))
+                    }
+                    is NewWords -> {
+                        _newWords.value = data
+                        socketEventChannel.send(SocketEvent.NewWordsEvent(data))
                     }
                     is DrawAction -> {
                         when(data.action) {
@@ -100,6 +110,11 @@ class DrawingViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun chooseWord(word: String, roomName: String) {
+        val chosenWord = ChosenWord(word, roomName)
+        sendBaseModel(chosenWord)
     }
 
     fun sendChatMessage(message: ChatMessage) {
