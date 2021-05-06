@@ -83,3 +83,13 @@ Napp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/PlayersList.kt
 Papp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/RoundDrawInfo.kt,3\c\3ce55be625948e49082a8ff856fd8e2c6fddaccf
 S
 #app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
+i
+9app/src/main/java/com/plcoding/doodlekong/di/AppModule.kt,c\2\c20a21cbb4144570719bfe71351f667c082479c2
+}
+Mapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/FlowStreamAdapter.kt,b\c\bc9292fafebd82d827be438b6a0831fd5639f8b2
+T
+$.idea/codeStyles/codeStyleConfig.xml,d\d\dd7b3350c29c49497756c7f32c69a3bed18b1cba
+L
+.idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
+q
+Aapp/src/main/java/com/plcoding/doodlekong/adapters/RoomAdapter.kt,3\b\3b943a2d548018e8c2ab73056b9eb3ce41ca1c2c
