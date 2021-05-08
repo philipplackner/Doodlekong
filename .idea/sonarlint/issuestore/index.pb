@@ -65,8 +65,6 @@ Lapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/GameError.kt,8
 Lapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/GameState.kt,d\8\d809ff6ca1555ed5a34b8bff10c6e2ba10cf0efe
 „
 Tapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/JoinRoomHandshake.kt,2\1\219a82609056ccc3f159d14703a20107dc4980c8
-~
-Napp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/PhaseChange.kt,2\4\2496defc82e6bf51fcfb96d7412671224c7afa78
 w
 Gapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/Ping.kt,6\0\60c2d94b7eec5110e5d2c144617d0d9a58cda22f
 }
@@ -87,3 +85,7 @@ L
 .idea/codeStyles/Project.xml,6\e\6ecd6000a7b6f4a2884412ff19f74193ed089648
 q
 Aapp/src/main/java/com/plcoding/doodlekong/adapters/RoomAdapter.kt,3\b\3b943a2d548018e8c2ab73056b9eb3ce41ca1c2c
+„
+Tapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/CustomGsonMessageAdapter.kt,a\b\abe0b8f2669273f683fbfbc1d9abed2df734be85
+v
+Fapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/DrawingApi.kt,2\a\2aca69fd5b16606c38687b393cbb419bb1ed92b8
