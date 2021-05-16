@@ -182,6 +182,10 @@ class DrawingViewModel @Inject constructor(
         }
     }
 
+    fun disconnect() {
+        sendBaseModel(DisconnectRequest())
+    }
+
     fun chooseWord(word: String, roomName: String) {
         val chosenWord = ChosenWord(word, roomName)
         sendBaseModel(chosenWord)
