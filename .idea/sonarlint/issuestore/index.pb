@@ -69,8 +69,6 @@ Mapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/PlayerData.kt,
 Napp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/PlayersList.kt,0\0\00ac79494ab0dedfaf7b84fdb3e275d444240a68
 S
 #app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
-i
-9app/src/main/java/com/plcoding/doodlekong/di/AppModule.kt,c\2\c20a21cbb4144570719bfe71351f667c082479c2
 }
 Mapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/FlowStreamAdapter.kt,b\c\bc9292fafebd82d827be438b6a0831fd5639f8b2
 T
@@ -89,3 +87,9 @@ p
 @app/src/main/java/com/plcoding/doodlekong/util/CoroutineTimer.kt,a\0\a067973be5c734df70a93815f27f256614553d5e
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+{
+Kapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/NewWords.kt,0\0\008c12e6907045f2c4959475ada3afe7d1f652c1
+€
+Papp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/RoundDrawInfo.kt,3\c\3ce55be625948e49082a8ff856fd8e2c6fddaccf
+s
+Capp/src/main/java/com/plcoding/doodlekong/adapters/PlayerAdapter.kt,1\5\1519727d5e6836c77e6b2b121370e084fe277716
