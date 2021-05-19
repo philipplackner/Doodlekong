@@ -26,6 +26,7 @@ import com.plcoding.doodlekong.adapters.PlayerAdapter
 import com.plcoding.doodlekong.data.remote.ws.Room
 import com.plcoding.doodlekong.data.remote.ws.models.*
 import com.plcoding.doodlekong.databinding.ActivityDrawingBinding
+import com.plcoding.doodlekong.ui.dialogs.LeaveDialog
 import com.plcoding.doodlekong.util.Constants
 import com.plcoding.doodlekong.util.hideKeyboard
 import com.tinder.scarlet.WebSocket
@@ -411,5 +412,14 @@ class DrawingActivity : AppCompatActivity(), LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     private fun onAppInBackground() {
         viewModel.disconnect()
+    }
+
+    override fun onBackPressed() {
+        LeaveDialog().apply {
+            setPositiveClickListener {
+                viewModel.disconnect()
+                finish()
+            }
+        }.show(supportFragmentManager, null)
     }
 }
