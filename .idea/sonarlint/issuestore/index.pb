@@ -7,8 +7,6 @@ o
 ?app/src/main/java/com/plcoding/doodlekong/DrawingApplication.kt,a\9\a95fbebd8d1d1ea784ef9717bc482a88ec6ba700
 o
 ?app/src/main/java/com/plcoding/doodlekong/util/DataStoreUtil.kt,6\5\65f6f03e0c61dcfa350d03a79dc5b510b37e509a
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 ‚
 Rapp/src/main/java/com/plcoding/doodlekong/ui/setup/fragments/SelectRoomFragment.kt,6\3\6337e99110ab79faf110fea6b6cdfd07166f7e33
 s
