@@ -85,11 +85,17 @@ Fapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/DrawingApi.kt,2\a\2ac
 Napp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/PhaseChange.kt,2\4\2496defc82e6bf51fcfb96d7412671224c7afa78
 p
 @app/src/main/java/com/plcoding/doodlekong/util/CoroutineTimer.kt,a\0\a067973be5c734df70a93815f27f256614553d5e
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 {
 Kapp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/NewWords.kt,0\0\008c12e6907045f2c4959475ada3afe7d1f652c1
 €
 Papp/src/main/java/com/plcoding/doodlekong/data/remote/ws/models/RoundDrawInfo.kt,3\c\3ce55be625948e49082a8ff856fd8e2c6fddaccf
 s
 Capp/src/main/java/com/plcoding/doodlekong/adapters/PlayerAdapter.kt,1\5\1519727d5e6836c77e6b2b121370e084fe277716
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+s
+Capp/src/main/java/com/plcoding/doodlekong/ui/dialogs/LeaveDialog.kt,7\2\72a959b7c546ccd4a3095a402f62e24cd1d1af22
+i
+9app/src/main/java/com/plcoding/doodlekong/di/AppModule.kt,c\2\c20a21cbb4144570719bfe71351f667c082479c2
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
