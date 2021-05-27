@@ -4,10 +4,10 @@ object Constants {
 
     const val USE_LOCALHOST = false
 
-    const val HTTP_BASE_URL = "https://fast-ravine-85734.herokuapp.com/"
+    const val HTTP_BASE_URL = "http://212.83.56.170"
     const val HTTP_BASE_URL_LOCALHOST = "http://10.0.2.2:8001/"
 
-    const val WS_BASE_URL = "https://fast-ravine-85734.herokuapp.com/ws/draw"
+    const val WS_BASE_URL = "http://212.83.56.170/ws/draw"
     const val WS_BASE_URL_LOCALHOST = "http://10.0.2.2:8001/ws/draw"
 
     const val DEFAULT_PAINT_THICKNESS = 12f
