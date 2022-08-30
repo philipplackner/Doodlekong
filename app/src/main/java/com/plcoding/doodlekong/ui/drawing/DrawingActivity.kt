@@ -4,11 +4,9 @@ import android.Manifest
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
-import android.view.Gravity
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
@@ -38,7 +36,6 @@ import com.plcoding.doodlekong.util.hideKeyboard
 import com.tinder.scarlet.WebSocket
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
@@ -48,7 +45,7 @@ import javax.inject.Inject
 private const val REQUEST_CODE_RECORD_AUDIO = 1
 
 @AndroidEntryPoint
-class DrawingActivity : AppCompatActivity(), LifecycleObserver,
+class DrawingActivity : AppCompatActivity(), LifecycleEventObserver,
     EasyPermissions.PermissionCallbacks, RecognitionListener {
 
     private lateinit var binding: ActivityDrawingBinding
@@ -88,8 +85,8 @@ class DrawingActivity : AppCompatActivity(), LifecycleObserver,
 
         binding.drawingView.roomName = args.roomName
 
-        chatMessageAdapter.stateRestorationPolicy =
-            RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+//        chatMessageAdapter.stateRestorationPolicy =
+//            RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
 
         val header = layoutInflater.inflate(R.layout.nav_drawer_header, binding.navView)
         rvPlayers = header.findViewById(R.id.rvPlayers)
@@ -541,11 +538,6 @@ class DrawingActivity : AppCompatActivity(), LifecycleObserver,
         return super.onOptionsItemSelected(item)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    private fun onAppInBackground() {
-        viewModel.disconnect()
-    }
-
     override fun onBackPressed() {
         LeaveDialog().apply {
             setPositiveClickListener {
@@ -553,5 +545,11 @@ class DrawingActivity : AppCompatActivity(), LifecycleObserver,
                 finish()
             }
         }.show(supportFragmentManager, null)
+    }
+
+    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+        if(event.ordinal == Lifecycle.Event.ON_STOP.ordinal){
+            viewModel.disconnect()
+        }
     }
 }

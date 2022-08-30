@@ -24,19 +24,18 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @ExperimentalCoroutinesApi
 @Module
 @InstallIn(ActivityRetainedComponent::class)
 object ActivityModule {
 
-    @ActivityRetainedScoped
-    @Provides
-    fun provideSetupRepository(
-        setupApi: SetupApi,
-        @ApplicationContext context: Context
-    ): SetupRepository = DefaultSetupRepository(setupApi, context)
+//    @ActivityRetainedScoped
+//    @Provides
+//    fun provideSetupRepository(
+//        setupApi: SetupApi,
+//        @ApplicationContext context: Context
+//    ): SetupRepository = DefaultSetupRepository(setupApi, context)
 
     @ActivityRetainedScoped
     @Provides

@@ -3,7 +3,6 @@ package com.plcoding.doodlekong.ui.setup.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -16,7 +15,6 @@ import com.plcoding.doodlekong.util.hideKeyboard
 import com.plcoding.doodlekong.util.navigateSafely
 import com.plcoding.doodlekong.util.snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class UsernameFragment : Fragment(R.layout.fragment_username) {
@@ -60,7 +58,6 @@ class UsernameFragment : Fragment(R.layout.fragment_username) {
                     is UsernameViewModel.SetupEvent.InputTooLongError -> {
                         snackbar(getString(R.string.error_username_too_long, MAX_USERNAME_LENGTH))
                     }
-                    else -> Unit
                 }
             }
         }
